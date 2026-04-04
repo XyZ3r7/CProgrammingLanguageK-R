@@ -1,0 +1,17 @@
+#+title: Unit1
+#+author: XyZ3r7
+
+** WordCounter
+ #+begin_src C
+    #include <stdio.h>
+    int main(){
+        long nc = 0;
+
+        while (getchar() != EOF){
+            ++nc; //equals nc = nc + 1
+        }
+        printf("%1d\n", nc);
+
+        return 0;
+    }
+ #+end_src
