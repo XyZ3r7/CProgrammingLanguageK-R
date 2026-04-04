@@ -21,11 +21,11 @@
 
 
 * State Machine
-** State: Object under current phase
-** Event/Input: External reason that causes changes
-** Transition: From one state jump to another state
+ State: Object under current phase
+ Event/Input: External reason that causes changes
+ Transition: From one state jump to another state
 
 * Switch & Case
-** Creates Jump Table in memory(Continuous)
-** When program reach switch(int), jump -> (instruction) address = Jump Table Base Address + c
-** However, bc it's using c as offsets, when c is too large, compiler will not create jump table. Instead, it will creates: 1, BST. 2, Creates mutiple small Jump Table(use if to check approximate area first). 3, generate if-else to check when there's very little case. 4, Bitmap when mutiple close case value has same instructions.
+ Creates Jump Table in memory(Continuous)
+ When program reach switch(int), jump -> (instruction) address = Jump Table Base Address + c
+ However, bc it's using c as offsets, when c is too large, compiler will not create jump table. Instead, it will creates: 1, BST. 2, Creates mutiple small Jump Table(use if to check approximate area first). 3, generate if-else to check when there's very little case. 4, Bitmap when mutiple close case value has same instructions.
