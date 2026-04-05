@@ -1,7 +1,7 @@
 #+title: Unit1
 #+author: XyZ3r7
 
-** WordCounter
+* WordCounter
  #+begin_src C
     #include <stdio.h>
     int main(){
@@ -19,6 +19,35 @@
  #+RESULTS:
  : 1
 
+* Word Counter
+#+begin_src C
+#include <stdio.h>
+
+#define IN 1
+#define OUT 0
+
+int main(){
+    int c, n1, nw, nc, state;
+
+    state = OUT;
+    nl = nw = nc = 0;
+    //State Machine, switching between word and out of word by detecting if
+    //if there's spaces or enter or tab
+    while((c = getchar()) != EOF){
+        ++nc;
+        if(c == '\n'){
+            ++nl;
+        }
+        if(c == ' ' || c == '\n' || c == '\t')
+            state = OUT;
+        else if (state == OUT){
+            state = IN;
+            ++nw;
+        }
+    }
+}
+
+#+end_src
 
 * State Machine
  State: Object under current phase
