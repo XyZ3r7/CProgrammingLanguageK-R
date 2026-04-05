@@ -25,14 +25,13 @@
 
 #define IN 1
 #define OUT 0
-
+//1.11: what kind of test sample will find potential errors: 1, Empty input/EOF only. 2, only sapce, tab and enter. 3, continuous spaces 4, single character with two spaces. (boundry values)
 int main(){
-    int c, n1, nw, nc, state;
+    int c, nl, nw, nc, state;
 
     state = OUT;
     nl = nw = nc = 0;
-    //State Machine, switching between word and out of word by detecting if
-    //if there's spaces or enter or tab
+    //State Machine, switching between word and out of word. When encounter a nonspace/enter/tab character but also has OUT state, it adds the word count. When met space\tab\enter, sets to out state and wait until it mets nonspace characters.
     while((c = getchar()) != EOF){
         ++nc;
         if(c == '\n'){

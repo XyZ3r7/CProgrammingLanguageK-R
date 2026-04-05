@@ -4,8 +4,8 @@ int main() {
     int space = 0;
     int tab = 0;
     int enter = 0;
-    int c = getchar();
-    while (c != EOF) {
+    int c;
+    while ((c = getchar()) != EOF) {
         if (c == ' ') {
             ++space;
         } else if (c == '\t') {
