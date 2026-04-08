@@ -12,14 +12,15 @@ int main(int argc, char *argv[]) {
                 counter++;
                 numRepeat--;
             }
+            continue;
         } else if (c == '\n') {
             putchar(c);
             counter = 0;
             continue;
         } else {
             putchar(c);
+            counter++;
         }
-        counter++;
     }
 
     return 0;
