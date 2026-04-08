@@ -1,4 +1,4 @@
-#include <stdio.h>
+ #include <stdio.h>
 
 int main() {
   // Still assume tab is align to four
@@ -8,26 +8,27 @@ int main() {
   // location in the line
     int c;
     int counterSpace = 0; // This is a counter for checking how many spaces
-    int location = 0;
+    int location = 1;
     while ((c = getchar()) != EOF) {
-        location++;
         if (c == ' ') {
             counterSpace++;
-            // if at 4*n location and it is a space, i can use a tab to replace it.
-            if (location % 4 == 0) {
+            if (location % 4 == 0 && counterSpace != 0) {
                 putchar('\t');
+                counterSpace = 0;
             }
         } else {
-          // Two different branch: 1, not at 4*n, there's already non space
-          // character. 2, at 4*n, there is extra spaces.
-          // In both cases I need to print out the nonspace character first.
-          // Maybe I can merge these two branch into one logic
             while (counterSpace > 0) {
                 putchar(' ');
                 counterSpace--;
             }
             putchar(c);
+
+            if(c == '\n'){
+               location = 0;
+            } else if (c == '\t') {
+                location = location +(4 - (location - 1) % 4) - 1;
+            }
         }
+        location++;
     }
-    return 0;
 }
