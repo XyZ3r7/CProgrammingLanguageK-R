@@ -14,6 +14,12 @@ int large = 0;
 #define LINE_COMMENT 2
 #define STAR_COMMENT 3
 #define QUOTATIONMARKS 4
+
+int add(int x, int y) {
+    return x + y;
+}
+
+
 int main(int argc, char *argv[]) {
   // Two cases, when brackets does count and brackets does not counts, clearly
   // when not in NORMAL mode brackets does NOT count
@@ -59,7 +65,24 @@ int main(int argc, char *argv[]) {
                     prevState = state;
                     state = ESCAPE;
                 }
+                int * isdfds;
+                int *dsf;
+                int* blah, xyz;
 
+                int (*x)[]; // when we dereference x, and then array-subscript it, we get an int
+                            // therefore, x is a pointer to an array of ints
+
+                int *x[];   // when we array-subscript x, and then dereference it, we get an int
+                            // therefore, x is an array containing pointers to ints
+
+                int (*f)(int, int); // when we dereference f and then call it with 2 ints, then we get an int
+                                    // therefore, f is a pointer to a function that accepts 2 ints and returns int
+
+                f = &add;
+
+                (*f)(42, 9001);
+                // declaration follows use
+                // the way you DECLARE a variable is ALWAYS written the same as how you USE the variable
             }
         }
 
