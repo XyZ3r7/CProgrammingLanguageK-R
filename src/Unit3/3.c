@@ -130,3 +130,50 @@ void itoa(int n, char s[])
 	s[i] = '\0';
 	reverse(s);
 }
+
+void itob2(int n, char s[], int base) {
+	static char digits[] = "0123456789abcdef";
+	unsigned int u;
+	int i, sign;
+
+	sign = n;
+	if (n < 0) u = -(unsigned int) n;
+	else u = n;
+
+	i = 0;
+	do {
+		s[i++] = digits[u % base];
+	}while ((u /= base) > 0);
+
+	if (sign < 0) s[i++] = '-';
+	s[i] = '\0';
+	reverse(s);
+}
+
+void itorb3(int n, char s[], int minimumWidth) {
+	//I think just add space then reverse....
+	unsigned int u;
+	int i, sign;
+
+	sign = n;
+	if (n < 0)
+		u = -(unsigned int) n;
+	else
+		u = n;
+
+	i = 0;
+	do {
+		s[i++] = u % 10 + '0';
+	} while ((u /= 10) > 0);
+
+	if (sign < 0)
+	 	s[i++] = '-';
+
+	for (;i < minimumWidth;i++) {
+		s[i] = ' ';
+	}
+
+	s[i] = '\0';
+
+	reverse(s);
+}
