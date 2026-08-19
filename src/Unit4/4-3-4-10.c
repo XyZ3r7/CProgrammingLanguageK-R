@@ -14,7 +14,7 @@ void push(double);
 double pop(void);
 
 // reverse polish calculator
-main() {
+int main() {
     int type;
     double op2;
     char s[MAXOP];
