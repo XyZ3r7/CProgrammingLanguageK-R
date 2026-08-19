@@ -38,6 +38,6 @@ void month_dayP(int year, int yearday, int *pmonth, int *pday) {
         }
         yearday -= *p;
     }
-    *pmonth = (p - *(daytab + leap));
+    *pmonth = p - *(daytab + leap);
     *pday = yearday;
 }
