@@ -45,4 +45,3 @@ void month_day(int year, int yearday, int *pmonth, int *pday) {
     *pmonth = i;
     *pday = yearday;
 }
-
