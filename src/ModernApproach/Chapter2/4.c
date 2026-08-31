@@ -8,6 +8,6 @@ int main() {
     int d;
     float b;
     float c;
-    printf("Integer: %d, %d, Float: %.32f, %.32f", a, d, b, c);
-    //For float it seems always 0.0000, for integer values were random
+    printf("Integer: %d, %d, Float: %.64f, %.64f", a, d, b, c);
+    //On Linux they are always 0s, on MacOS Integers are random values but Floats are always 0.
 }
